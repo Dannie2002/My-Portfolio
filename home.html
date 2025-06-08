@@ -15,18 +15,18 @@
         <nav class="navbar">
           <div class="logo">Web.<span class="logo-span">content</span></div>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Contact Me</a></li>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Projects">Projects</a></li>
+            <li><a href="#Skills">Skills</a></li>
+            <li><a href="#Contact">Contact Me</a></li>
           </ul>
         </nav>
     </header>
 
 
 <!--this is home section -->
-<section class="HOME">
+<section class="HOME" id="Home">
 
 
 <div class="home-content">
@@ -57,7 +57,7 @@ My designs are clean, user-friendly, and focused on delivering seamless digital 
 
 <!--this is about section -->
 
-<section class="ABOUT">
+<section class="ABOUT" id="About">
 
     <div class="image">
          <img class="about-this-image " src="IMG_20230107_182857_215.jpg" >
@@ -74,7 +74,7 @@ My designs are clean, user-friendly, and focused on delivering seamless digital 
 
 
 
-<!--this is skills section -->
+<!--this is skills section 
 
 <section class="SKILLS">
 
@@ -99,14 +99,14 @@ My designs are clean, user-friendly, and focused on delivering seamless digital 
 </section>
 
 
-
+-->
 
 
 
 <!--this is projects section -->
 
 
-<section class="PROJECTS">   
+<section class="PROJECTS" id="Projects">   
 
 
   <div class="project-container">
@@ -130,7 +130,7 @@ My designs are clean, user-friendly, and focused on delivering seamless digital 
       <div class="project-card">
         <i class="fas fa-bullhorn"></i>
         <h4>Financial Tracker</h4>
-        <p>I developed a smart financial tracker app using Flutter to help users manage their income and expenses easily.</p>
+        <p class="project-description">I developed a smart financial tracker app using Flutter to help users manage their income and expenses easily.</p>
       </div>
 
       <!-- Project Card 3 -->
@@ -150,7 +150,7 @@ My designs are clean, user-friendly, and focused on delivering seamless digital 
 
 </section>
 <!--this is contact section -->
-<section class="CONTACT">
+<section class="CONTACT" id="Contact">
   
         <div class="contact-content">
             <h1 class="contact-h1">Contact <span class="contact-span">Me</span></h1>
@@ -179,9 +179,8 @@ My designs are clean, user-friendly, and focused on delivering seamless digital 
 
 </section>
 <footer class="footer">
-  <p>2025 danniemankhwazi@gmail.com</p>
+  &copy; 2025 Dannie | Email: <a href="mailto:danniemankhwazi@gmail.com" >dannie@example.com</a> &mdash; All rights reserved.
 </footer>
-
 </body> 
 
 
@@ -196,18 +195,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (rect.top < windowHeight * 0.8) {
       header.style.opacity = '1';
-      header.style.transform = 'translateY(0)';
-      header.style.transition = 'opacity 0.8s, transform 4s';
+      header.style.transform = 'translateX(0)';
+      header.style.transition = 'opacity 0.8s, transform 1s';
     } else {
       header.style.opacity = '0';
-      header.style.transform = 'translateY(40px)';
-      header.style.transition = 'opacity 0.8s, transform 0.8s';
+      header.style.transform = 'translateX(100%)';
+      header.style.transition = 'opacity 0.8s, transform 1.5s';
     }
   }
 
   // Initial state
   header.style.opacity = '0';
-  header.style.transform = 'translateY(40px)';
+  header.style.transform = 'translateX(70%)';
 
   window.addEventListener('scroll', handleScroll);
   handleScroll();
@@ -220,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Set initial state
   aboutParagraph.style.opacity = '0';
   aboutParagraph.style.transform = 'translateX(-60px)';
-  aboutParagraph.style.transition = 'opacity 0.8s, transform 0.8s';
+  aboutParagraph.style.transition = 'opacity 0.8s, transform 3s';
 
   function handleScroll() {
     const rect = aboutParagraph.getBoundingClientRect();
@@ -240,6 +239,63 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  const aboutParagraph = document.querySelector('.contact-paragraph');
+
+  // Set initial state
+  aboutParagraph.style.opacity = '0';
+  aboutParagraph.style.transform = 'translateX(100px)';
+  aboutParagraph.style.transition = 'opacity 0.8s, transform 2s';
+
+  function handleScroll() {
+    const rect = aboutParagraph.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top < windowHeight * 0.85) {
+      aboutParagraph.style.opacity = '1';
+      aboutParagraph.style.transform = 'translateX(0)';
+    } else {
+      aboutParagraph.style.opacity = '0';
+      aboutParagraph.style.transform = 'translateX(100px)';
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const cards = document.querySelectorAll('.project-card');
+
+  // Set initial state for all cards
+  cards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateX(80px)';
+    card.style.transition = 'opacity 0.7s, transform 0.7s';
+  });
+
+  function handleScroll() {
+    const windowHeight = window.innerHeight;
+    cards.forEach((card, idx) => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < windowHeight * 0.85) {
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateX(0)';
+        }, idx * 150); // 150ms delay per card for wave effect
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'translateX(80px)';
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+});
 
 
 

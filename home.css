@@ -9,6 +9,12 @@
 }
 /* body ruleset removed because it was empty */
 
+
+html{
+  scroll-behavior: smooth;
+}
+
+
   .fixed-navbar{
 margin-top: 0;
   width: 100%;
@@ -34,7 +40,6 @@ margin-top: 0;
     font-weight: bold;
       font-family: "Shadows Into Light", cursive;
   }
-   
 
 
 .logo-span {
@@ -181,6 +186,7 @@ margin-bottom: 20px;
 .home-icons a:hover{
   transform: translateY(-5px);
   color: #ff0000; /* For font icons */
+  text-shadow: 8px -3px 13px rgba(255,0,0,0.91);
 }
 .home-button{
   background-color: #ff0000;
@@ -196,6 +202,7 @@ margin-bottom: 20px;
 .home-button:hover{
    transform: translateY(-5px);
   color: #dad2d2; /* For font icons */
+  text-shadow: 8px -3px 13px rgba(255,0,0,0.91);
 }
 
 
@@ -257,7 +264,7 @@ margin-bottom: 20px;
         transform:translateY(0);
     }
 }
-.home-h1, .about-h1 {
+.home-h1 {
     color: #ffffff;
     animation: bounce-top infinite alternate-reverse;
     animation-duration: 10s;
@@ -288,11 +295,11 @@ margin-bottom: 20px;
     width: 100%;
     font-size: 18px;
     line-height: 1.6;
-    color: #ffffff;
+    color: #e9e0e0;
     font-weight: 150;
    opacity: 0;
   transform: translateX(-60px);
-  transition: opacity 0.8s, transform 2.8s;
+  transition: opacity 2s, transform 2.8s;
 
     
   }
@@ -376,7 +383,7 @@ justify-content: center;
   align-items: center;
   justify-content: center;
 width: 100%;
-background-color: #000000;
+background-color: #e9e0e0;
 
 
   height: 100vh;
@@ -385,24 +392,19 @@ background-color: #000000;
 
 .project-header {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s, transform 0.2s;
+  transform: translateX(100%);
+  transition: opacity 2s, transform 1.5s;
 }
 
 
 .project-header h2{
-  color: #ff0000;
+  color: #000000;
   font-weight: 700;
   margin-bottom: 20px;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
-
-
-
-
-
 
 
 
@@ -424,16 +426,16 @@ background-color: #000000;
 }
 .project-card{
   text-align: center;
-  background-color: #e9e0e0;
+  background-color: #d60a0d;
   border-radius: 14px;
   padding: 20px;
   box-shadow: 0 2px 10px rgba(13, 13, 13, 0.761);
   transition: transform 0.3s ease;
   height: 270px;
   width: 270px;
-  color: #000000;
+   color: #e9e0e0;
    transition: transform 0.5s, background 0.2s;
-
+ transition: opacity 0.7s, transform 0.7s;
 }
 .project-card:hover {
   transform: translateY(-8px) scale(1.05);
@@ -443,12 +445,12 @@ background-color: #000000;
 .project-card h4 {
   font-size: 1.6rem;
   margin-bottom: 10px;
-  color: #ff0000;
+  color: #000000;
 }
 
 .project-card i {
   font-size: 3rem;
-  color: #2d80a6;
+  color: #e9e0e0;
   margin-bottom: 12px;
 }
 
@@ -472,8 +474,8 @@ background-color: #000000;
  .contact-content{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
   padding: 20px;
   padding: 20px;
 }
@@ -492,8 +494,11 @@ background-color: #000000;
     padding: 20px;
     font-size: 18px;
     line-height: 1.6;
-    color: #ffffff;
+   color: #e9e0e0;
     font-weight: 250;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1s, transform 2.8s;
   }
 
 
@@ -555,11 +560,27 @@ background-color: #000000;
 
 
 .footer {
-  background-color: #0d0d0d;
-  color: #f1f1f1;
+  background-color: #e9e0e0;
+  color: #000000;
   text-align: center;
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 200;
+}
+
+
+.footer a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 300;
+   font-family: "Shadows Into Light", cursive;
+  transition: color 0.3s ease;
+}
+
+
+.footer a:hover {
+  color: #ff0000;
+
+  text-shadow: 8px -3px 13px rgba(255,0,0,0.91);
 }
