@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-@font-face {
-  font-family: 'MyCustomFont';
-  src: url('fonts/MyFont.ttf') format('truetype'); /* Or .woff/.otf as needed */
-  font-weight: normal;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Shadows+Into+Light&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -37,6 +32,7 @@ margin-top: 0;
     color: #ff0000;
     font-size: 1.6rem;
     font-weight: bold;
+      font-family: "Shadows Into Light", cursive;
   }
    
 
@@ -195,6 +191,7 @@ margin-bottom: 20px;
   font-size: 1.2rem;
   font-weight: bold;
   transition: all .3s ease-in-out; 
+  display: inline-block;
 }
 .home-button:hover{
    transform: translateY(-5px);
@@ -289,15 +286,19 @@ margin-bottom: 20px;
 
   .about-paragraph{
     width: 100%;
-    padding: 20px;
     font-size: 18px;
     line-height: 1.6;
     color: #ffffff;
     font-weight: 150;
+   opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s, transform 2.8s;
+
     
   }
  .about-span{
   color: #ff0000;
+  font-weight: 220;
 }
 
 
@@ -375,12 +376,35 @@ justify-content: center;
   align-items: center;
   justify-content: center;
 width: 100%;
-
+background-color: #000000;
 
 
   height: 100vh;
 
 }
+
+.project-header {
+  text-align: center;
+  font-size: 2rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s, transform 0.2s;
+}
+
+
+.project-header h2{
+  color: #ff0000;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+
+
+
+
+
+
 
 .project-container{
   display: flex;
@@ -399,31 +423,32 @@ width: 100%;
   margin-top: 70px;
 }
 .project-card{
-  background-color: #ec2727;
+  text-align: center;
+  background-color: #e9e0e0;
   border-radius: 14px;
   padding: 20px;
   box-shadow: 0 2px 10px rgba(13, 13, 13, 0.761);
   transition: transform 0.3s ease;
   height: 270px;
   width: 270px;
-  color: #ffffff;
-   transition: transform 0.2s, background 0.2s;
+  color: #000000;
+   transition: transform 0.5s, background 0.2s;
 
 }
 .project-card:hover {
-  transform: translateY(-8px) scale(1.03);
+  transform: translateY(-8px) scale(1.05);
   background: #fff6f6;
 }
 
 .project-card h4 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 10px;
-  color: #ffffff;
+  color: #ff0000;
 }
 
 .project-card i {
   font-size: 3rem;
-  color: #222;
+  color: #2d80a6;
   margin-bottom: 12px;
 }
 

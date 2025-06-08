@@ -35,7 +35,7 @@
     <p class="home-paragraph1">I'm a Web developer and UI/UX Designer.</p>
   <p class="home-paragraph ">I build responsive, high-performance websites tailored for modern users.
 My designs are clean, user-friendly, and focused on delivering seamless digital experiences.</p>
-  <a href="#" class="home-button">Download CV</a>
+  <a href="#" class="home-button" download="RESEARCH AIM OB&Qs.pdf">Download CV</a>
 <div class="home-icons">
   <a href="#"><i class="fab fa-facebook"></i></a>
   <a href="#"><i class="fab fa-twitter"></i></a>
@@ -66,8 +66,8 @@ My designs are clean, user-friendly, and focused on delivering seamless digital 
 
     <div class="about-content">
         <h1 class="about-h1">About <span class="about-span">Me</span></h1>
-        <p class="about-paragraph ">I'm a passionate Web Developer and UI/UX Designer dedicated to crafting clean, responsive, and user-friendly digital experiences. From intuitive interfaces to fully functional websites, I combine design thinking with front-end development to bring ideas to life. Whether you're a business, brand, or individual, my goal is to create web solutions that are not only visually appealing but also effective and purposeful.
-        </p>
+        <p class="about-paragraph ">I'm a passionate Web Developer and UI/UX Designer dedicated to crafting clean, responsive, and user-friendly digital experiences. From intuitive interfaces to fullyl websites,<span class="about-span"> I combine design thinking with front-end development to bring ideas to life. Whether you're a business, brand, or individual, my goal is to create web solutions that are not only visually appealing but also effective and purposeful.
+        </span></p>
     </div>
 
 </section>
@@ -112,7 +112,7 @@ My designs are clean, user-friendly, and focused on delivering seamless digital 
   <div class="project-container">
 
     <!-- Section Title -->
-    <div class="section-header">
+    <div class="project-header">
       <h2>My Projects</h2>
     </div>
 
@@ -182,5 +182,82 @@ My designs are clean, user-friendly, and focused on delivering seamless digital 
   <p>2025 danniemankhwazi@gmail.com</p>
 </footer>
 
-</body>
+</body> 
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const header = document.querySelector('.project-header');
+
+  function handleScroll() {
+    const rect = header.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top < windowHeight * 0.8) {
+      header.style.opacity = '1';
+      header.style.transform = 'translateY(0)';
+      header.style.transition = 'opacity 0.8s, transform 4s';
+    } else {
+      header.style.opacity = '0';
+      header.style.transform = 'translateY(40px)';
+      header.style.transition = 'opacity 0.8s, transform 0.8s';
+    }
+  }
+
+  // Initial state
+  header.style.opacity = '0';
+  header.style.transform = 'translateY(40px)';
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const aboutParagraph = document.querySelector('.about-paragraph');
+
+  // Set initial state
+  aboutParagraph.style.opacity = '0';
+  aboutParagraph.style.transform = 'translateX(-60px)';
+  aboutParagraph.style.transition = 'opacity 0.8s, transform 0.8s';
+
+  function handleScroll() {
+    const rect = aboutParagraph.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top < windowHeight * 0.85) {
+      aboutParagraph.style.opacity = '1';
+      aboutParagraph.style.transform = 'translateX(0)';
+    } else {
+      aboutParagraph.style.opacity = '0';
+      aboutParagraph.style.transform = 'translateX(-60px)';
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+});
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </html>
