@@ -8,7 +8,9 @@
     font-family: Outfit;
 }
 /* body ruleset removed because it was empty */
-
+body{
+overflow-x: hidden;
+}
 
 html{
   scroll-behavior: smooth;
@@ -16,7 +18,7 @@ html{
 
 
   .fixed-navbar{
-margin-top: 0;
+ margin-top: 0;
   width: 100%;
   background-color: rgb(0, 0, 0);
   position: fixed;
@@ -46,6 +48,16 @@ margin-top: 0;
 color:  #ffffff;
   padding: 0 4px;
 }
+
+
+.menu-icon {
+  display: none;
+  font-size: 2.2rem;
+  color: #ff8000;
+  cursor: pointer;
+  z-index: 1001;
+}
+
   .navbar ul {
     list-style: none;
     display: flex;
@@ -347,11 +359,11 @@ margin-bottom: 20px;
 background: #FF0000;
   background: linear-gradient(
     180deg,
-    #e3e1e1 0%,
-    #ffb199 25%,
+    #e9e0e0 0%,
+    #000000b1 100%,
     #e9e0e0 50%,
     #e9e0e0 75%,
-    #ff8000 100%
+    #00000068 100%
   );
   padding: 15px;
   display: flex;
@@ -365,7 +377,7 @@ background: #FF0000;
 .skills-h1 {
   text-align: center;
   font-size: 2rem;
-  color: #ff8000;
+  color: #000000;
   font-weight: 700;
  
 }
@@ -378,7 +390,7 @@ background: #FF0000;
   margin-top: 10px;
 }
 .skill-card {
-  background: #ff0000;
+  background: #e9e0e0;
   border-radius: 12px;
   padding: 24px 16px;
   text-align: center;
@@ -401,7 +413,7 @@ background: #FF0000;
 }
 .skill-card h4 {
   margin: 0;
-  color: #000000;
+  color: #ed9e01;
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
@@ -471,28 +483,25 @@ background: #FF0000;
 }
 .project-card{
   text-align: center;
-  background-color: #000000;
+  background-color: #ff8000;
   border-radius: 14px;
   padding: 20px;
   transition: transform 1s ease;
   height: 280px;
   width: 280px;
-
- transition: background 0.7s, transform 0.7s;
+  border-right: 4px solid #000000;
+  
 }
 .project-card:hover {
-  transform: translateY(-8px) scale(1.8);
-  background-color: #fff6f6;
+  transform: translateY(-8px) scale(1.05);
+  background-color: #ff0000;
 
 }
 
 .project-card h4 {
   font-size: 1.5rem;
   margin-bottom: 10px;
- background: linear-gradient(90deg, #ff8000, #ff0000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;           /* For future compatibility */
+  color: #000000;
   font-weight: 600;
 }
 
@@ -503,10 +512,10 @@ background: #FF0000;
 }
 
 .project-description {
-  font-weight: 150;
-  line-height: 1.6;
+  font-weight: 300;
+  line-height: 1.2;
   font-size: 18px;
-  color: #e9e0e0;
+  color: #000000;
   margin-bottom: 10px;
  
 }
@@ -695,6 +704,167 @@ background: #FF0000;
 }
 
 
+/* Responsive styles for mobile */
+@media (max-width: 900px) {
+  .menu-icon {
+    display: block;
+  }
+  nav ul {
+    position: fixed;
+    top: 70px; /* adjust based on your navbar height */
+    right: 0;
+    background: #181818;
+    flex-direction: column;
+    width: 200px;
+    height: 100vh;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    box-shadow: -2px 0 12px rgba(0,0,0,0.12);
+    z-index: 1000;
+  }
+  nav ul.active {
+    transform: translateX(0);
+  }
+}
 
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+
+
+@media (max-width: 900px) {
+  .menu-icon { display: block; }
+  nav ul { transform: translateX(100%); }
+  nav ul.active { transform: translateX(0); }
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 768px) {
+  .HOME {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 0;
+    text-align: center;
+ 
+  }
+  .home-content, .image {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .image img,
+  .this-image {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .home-icons {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .ABOUT {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px; /* breathing space between image and content */
+    padding: 32px 10px;
+    text-align: center;
+  }
+  .ABOUT .image,
+  .ABOUT .about-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .about-this-image {
+    max-width: 80vw;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+
+  .about-paragraph {
+ font-size: 16px;
+  }
+}
+/* Mobile: 1 card per row, full width */
+@media (max-width: 700px) {
+  .PROJECTS {
+    padding: 24px 0;
+    height: auto;
+  }
+  .project-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .project-card {
+    width: 90vw;
+    max-width: 98vw;
+    min-width: 0;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .CONTACT {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px; /* breathing space between image/content/form */
+    padding: 32px 10px;
+    text-align: center;
+  }
+  .CONTACT .image,
+  .CONTACT .contact-content,
+  .CONTACT .contact-form-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .CONTACT img {
+    max-width: 80vw;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+}
+
+.menu-icon,
+.close-icon {
+  font-size: 2.2rem;
+  color: #ff0000;
+  cursor: pointer;
+  z-index: 1001;
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .menu-icon {
+    display: block;
+  }
+  .close-icon {
+    display: block;
+    position: absolute;
+    top: 24px;
+    right: 32px;
+  }
+}
