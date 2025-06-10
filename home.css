@@ -8,8 +8,9 @@
     font-family: Outfit;
 }
 /* body ruleset removed because it was empty */
-body{
+ html, body{
 overflow-x: hidden;
+max-width: 100vw;
 }
 
 html{
@@ -92,7 +93,7 @@ color:  #ffffff;
   .navbar ul li a::after {
     content: '';
     position: absolute;
-    width: 100%;
+    width: 80%;
     height: 2px;
     background-color: #ffffff;
     bottom: -2px;
@@ -363,7 +364,7 @@ background: #FF0000;
     #000000b1 100%,
     #e9e0e0 50%,
     #e9e0e0 75%,
-    #00000068 100%
+    #ff8000 100%
   );
   padding: 15px;
   display: flex;
@@ -376,8 +377,8 @@ background: #FF0000;
 
 .skills-h1 {
   text-align: center;
-  font-size: 2rem;
-  color: #000000;
+  font-size: 2.5rem;
+  color: #ff0000;
   font-weight: 700;
  
 }
@@ -396,8 +397,8 @@ background: #FF0000;
   text-align: center;
   align-items: center;
   color: #e9e0e0;
-  width:80px;
-  height: 80px;
+  width:100px;
+  height: 100px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
   transition: all  transform 0.3s ; color:1s;
 }
@@ -413,7 +414,7 @@ background: #FF0000;
 }
 .skill-card h4 {
   margin: 0;
-  color: #ed9e01;
+  color: #ff8000;
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
@@ -740,7 +741,7 @@ background: #FF0000;
 }
 
 /* Responsive: stack vertically on small screens */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .HOME {
     flex-direction: column;
     gap: 24px;
@@ -774,7 +775,7 @@ background: #FF0000;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 600px) {
   .ABOUT {
     display: flex;
     flex-direction: column;
@@ -868,3 +869,7 @@ background: #FF0000;
     right: 32px;
   }
 }
+
+
+
+
