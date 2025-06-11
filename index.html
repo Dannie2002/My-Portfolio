@@ -308,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function() {
   cards.forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateX(80px)';
-    card.style.transition = 'opacity 0.7s, transform 1.9s';
+    card.style.transition = 'opacity 0.8s, transform 1.9s';
   });
 
   function handleScroll() {
@@ -319,7 +319,7 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(() => {
           card.style.opacity = '1';
           card.style.transform = 'translateX(0)';
-        }, idx * 150); // 150ms delay per card for wave effect
+        }, idx * 700); // 700ms delay per card for wave effect
       } else {
         card.style.opacity = '0';
         card.style.transform = 'translateX(80px)';
